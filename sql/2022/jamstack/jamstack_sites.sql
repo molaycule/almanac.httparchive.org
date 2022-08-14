@@ -54,7 +54,7 @@ CREATE OR REPLACE TABLE `httparchive.almanac.jamstack_sites` AS
         c.device IS NULL
       )
     WHERE
-      p75_lcp <= 2400 AND
+      p75_lcp <= 2500 AND
       p75_fcp <= 1800
   )
 
