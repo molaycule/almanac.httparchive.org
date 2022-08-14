@@ -25,7 +25,8 @@ CREATE OR REPLACE TABLE `httparchive.almanac.jamstack_sites` AS
           expAge > 0
         )
       ) AND
-      _cdn_provider IS NOT NULL
+      _cdn_provider IS NOT NULL AND
+      _cdn_provider != ''
   ),
 
   fast_jamstack_sites AS (
