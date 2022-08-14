@@ -1,24 +1,24 @@
 WITH totals AS (
   SELECT
-  client,
-  date,
-  IFNULL(rank,0) AS rank_grouping,
-  COUNT(0) AS total_sites
-FROM
-  `httparchive.almanac.requests`
-WHERE
-  firstHtml
-GROUP BY
-  client,
-  date,
-  rank
+    client,
+    date,
+    IFNULL(rank, 0) AS rank_grouping,
+    COUNT(0) AS total_sites
+  FROM
+    `httparchive.almanac.requests`
+  WHERE
+    firstHtml
+  GROUP BY
+    client,
+    date,
+    rank
 ),
 
 jamstack_sites AS (
   SELECT
     client,
     date,
-    IFNULL(rank,0) AS rank_grouping,
+    IFNULL(rank, 0) AS rank_grouping,
     COUNT(0) AS num_sites
   FROM
     `httparchive.almanac.jamstack_sites`
