@@ -1,8 +1,19 @@
-WITH totals AS (
+WITH jamstack_total_sites AS (
   SELECT
     client,
     date,
-    IFNULL(rank, 0) AS rank_grouping,
+    COUNT(0) AS total_jamstack_sites
+  FROM
+    `httparchive.almanac.jamstack_sites`
+  GROUP BY
+    client,
+    date
+),
+
+totals AS (
+  SELECT
+    client,
+    date,
     COUNT(0) AS total_sites
   FROM
     `httparchive.almanac.requests`
@@ -10,43 +21,20 @@ WITH totals AS (
     firstHtml
   GROUP BY
     client,
-    date,
-    rank
-),
-
-jamstack_sites AS (
-  SELECT
-    client,
-    date,
-    IFNULL(rank, 0) AS rank_grouping,
-    COUNT(0) AS num_sites
-  FROM
-    `httparchive.almanac.jamstack_sites`
-  GROUP BY
-    client,
-    date,
-    rank
-
+    date
 )
 
 SELECT
   client,
   date,
-  rank_grouping,
-  CASE
-    WHEN rank_grouping = 0 THEN ''
-    WHEN rank_grouping = 10000000 THEN 'all'
-    ELSE FORMAT("%'d", rank_grouping)
-  END AS ranking,
-  num_sites,
+  total_jamstack_sites,
   total_sites,
-  SAFE_DIVIDE(num_sites, total_sites) AS rank_pct
+  SAFE_DIVIDE(total_jamstack_sites, total_sites) AS total_pct
 FROM
-  jamstack_sites
+  jamstack_total_sites
 JOIN
   totals
-USING (client, date, rank_grouping)
+USING (client, date)
 ORDER BY
   client,
-  date,
-  rank_grouping
+  date
