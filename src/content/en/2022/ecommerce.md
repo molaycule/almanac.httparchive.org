@@ -3,7 +3,7 @@
 title: Ecommerce
 #TODO - Review and update chapter description
 description: Ecommerce chapter of the 2022 Web Almanac covering ecommerce platforms, page weight, images, third-parties, core web vitals and lighthouse performance metrics, SEO, and PWAs.
-authors: [amandeepsinghvirdi, himani-kankaria]
+authors: [amandeepsinghvirdi]
 reviewers: [alankent, bobbyshaw, rockeynebhwani]
 analysts: [jrharalson]
 editors: [shantsis]
