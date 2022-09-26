@@ -1,14 +1,14 @@
 ---
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
-title: CMS
+title: Caching
 #TODO - Review and update chapter description
-description: CMS chapter of the 2022 Web Almanac covering CMS adoption, user experience of websites running on CMS platforms, and CMS resource weights.
-authors: [sirjonathan]
-reviewers: [alexdenning, dknauss, alonkochba, honzasladek]
-analysts: [csliva]
+description: Caching chapter of the 2022 Web Almanac covering cache-control, expires, TTLs, validity, vary, set-cookies, service workers and opportunities.
+authors: [roryhewitt]
+reviewers: [rrajiv]
+analysts: [kevinfarrugia]
 editors: []
 translators: []
-results: https://docs.google.com/spreadsheets/d/1HvTcCEw9LeMNX-fI_yOy0HemKFYKaQAHBxtB0etakqY/
+results: https://docs.google.com/spreadsheets/d/16wQoA9ZciYkdW65RfR6CuW9H8TdMTQjhLuTSvVlN_rs/
 featured_quote: TODO
 featured_stat_1: TODO
 featured_stat_label_1: TODO

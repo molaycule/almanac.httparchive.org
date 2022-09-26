@@ -636,11 +636,11 @@ td.numeric {
   text-align: right;
 }
 
-.numeric-good {
+td .numeric-good {
   color: #38761d;
 }
 
-.numeric-bad {
+td .numeric-bad {
   color: #b60000;
 }
 
