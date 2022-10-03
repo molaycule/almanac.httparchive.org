@@ -17,7 +17,7 @@ CASE
   WHEN mimeType = 'image/apng' THEN 'APNG'
   WHEN mimeType = 'image/avif' THEN 'AVIF'
   WHEN mimeType = 'image/gif' THEN 'GIF'
-  WHEN mimeType = 'image/jpg' THEN 'JPEG'
+  WHEN mimeType = 'image/jpeg' OR mimeType = 'image/jpg' THEN 'JPEG'
   WHEN mimeType = 'image/png' THEN 'PNG'
   WHEN mimeType = 'image/svg+xml' THEN 'SVG'
   WHEN mimeType = 'image/webp' THEN 'WEBP'
